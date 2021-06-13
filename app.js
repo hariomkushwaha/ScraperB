@@ -4,6 +4,8 @@ const cheerio = require("cheerio");
 const request = require("request");
 const { response } = require("express");
 
+const app = express();
+
 
 const PORT = process.env.PORT || 5000
 if (process.env.NODE_ENV === "production") {
@@ -12,7 +14,7 @@ if (process.env.NODE_ENV === "production") {
 
 
 
-const app = express();
+
 app.set('view engine', 'ejs');
 
 app.use(bodyParser.urlencoded({extended: true}));
