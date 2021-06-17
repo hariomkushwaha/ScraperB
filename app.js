@@ -20,7 +20,7 @@ app.use(function(req, res, next) {
 
 app.set('view engine', 'ejs');
 
-app.use(bodyParser.urlencoded({extended: true}));
+// app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
 app.use(express.json());
@@ -44,10 +44,11 @@ app.post('/API/scrape', function(req,res){
     const Author2 =[];
     const que = [];
     const qu ={
-        q :req.body.q
+        q :req.body.data.q
     }
      que.push(qu);
-    
+
+    console.log(req.body.data.q);
 
     request('https://medium.com/search?q='+que[0].q,(err,response,html)=>{
 
